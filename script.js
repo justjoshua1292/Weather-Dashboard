@@ -95,6 +95,82 @@ function searchCity (cityName) {
             day1Hum.textContent = "Humidity: " + data.daily[1].humidity;
 
            
+
+            // DAY 2
+            var day2Date = document.querySelector("#day-2-date");
+            day2Date.textContent = dayjs(data.daily[2].dt*1000).format('MM/DD/YY');
+
+            var day2Icon = document.querySelector("#day-2-icon");
+            day2Icon.src = "https://openweathermap.org/img/wn/" + data.daily[2].weather[0].icon + ".png"
+
+            var day2Temp = document.querySelector("#day-1-temp");
+            var convertedTempDay2 = Math.round(((data.daily[2].temp.day - 273.15) * 9/5 + 32), 2);
+            day2Temp.textContent = "Temp: " + convertedTempDay2  + " °F";
+
+            var day2Wind = document.querySelector("#day-2-wind");
+            day2Wind.textContent = "Wind: " + data.daily[2].wind_speed;
+
+            var day2Hum = document.querySelector("#day-2-hum");
+            day2Hum.textContent = "Humidity: " + data.daily[2].humidity;
+
+
+
+
+
+
+            // DAY 3
+            var day2Date = document.querySelector("#day-2-date");
+            day2Date.textContent = dayjs(data.daily[2].dt*1000).format('MM/DD/YY');
+
+            var day2Icon = document.querySelector("#day-2-icon");
+            day2Icon.src = "https://openweathermap.org/img/wn/" + data.daily[2].weather[0].icon + ".png"
+
+            var day2Temp = document.querySelector("#day-1-temp");
+            var convertedTempDay2 = Math.round(((data.daily[2].temp.day - 273.15) * 9/5 + 32), 2);
+            day2Temp.textContent = "Temp: " + convertedTempDay2  + " °F";
+
+            var day2Wind = document.querySelector("#day-2-wind");
+            day2Wind.textContent = "Wind: " + data.daily[2].wind_speed;
+
+            var day2Hum = document.querySelector("#day-2-hum");
+            day2Hum.textContent = "Humidity: " + data.daily[2].humidity;
+
+
+            // DAY 4
+            var day2Date = document.querySelector("#day-2-date");
+            day2Date.textContent = dayjs(data.daily[2].dt*1000).format('MM/DD/YY');
+
+            var day2Icon = document.querySelector("#day-2-icon");
+            day2Icon.src = "https://openweathermap.org/img/wn/" + data.daily[2].weather[0].icon + ".png"
+
+            var day2Temp = document.querySelector("#day-1-temp");
+            var convertedTempDay2 = Math.round(((data.daily[2].temp.day - 273.15) * 9/5 + 32), 2);
+            day2Temp.textContent = "Temp: " + convertedTempDay2  + " °F";
+
+            var day2Wind = document.querySelector("#day-2-wind");
+            day2Wind.textContent = "Wind: " + data.daily[2].wind_speed;
+
+            var day2Hum = document.querySelector("#day-2-hum");
+            day2Hum.textContent = "Humidity: " + data.daily[2].humidity;
+
+
+            // DAY 5
+            var day2Date = document.querySelector("#day-2-date");
+            day2Date.textContent = dayjs(data.daily[2].dt*1000).format('MM/DD/YY');
+
+            var day2Icon = document.querySelector("#day-2-icon");
+            day2Icon.src = "https://openweathermap.org/img/wn/" + data.daily[2].weather[0].icon + ".png"
+
+            var day2Temp = document.querySelector("#day-1-temp");
+            var convertedTempDay2 = Math.round(((data.daily[2].temp.day - 273.15) * 9/5 + 32), 2);
+            day2Temp.textContent = "Temp: " + convertedTempDay2  + " °F";
+
+            var day2Wind = document.querySelector("#day-2-wind");
+            day2Wind.textContent = "Wind: " + data.daily[2].wind_speed;
+
+            var day2Hum = document.querySelector("#day-2-hum");
+            day2Hum.textContent = "Humidity: " + data.daily[2].humidity;
+
         })
     })
 }
