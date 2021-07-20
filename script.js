@@ -103,7 +103,7 @@ function searchCity (cityName) {
             var day2Icon = document.querySelector("#day-2-icon");
             day2Icon.src = "https://openweathermap.org/img/wn/" + data.daily[2].weather[0].icon + ".png"
 
-            var day2Temp = document.querySelector("#day-1-temp");
+            var day2Temp = document.querySelector("#day-2-temp");
             var convertedTempDay2 = Math.round(((data.daily[2].temp.day - 273.15) * 9/5 + 32), 2);
             day2Temp.textContent = "Temp: " + convertedTempDay2  + " °F";
 
@@ -112,64 +112,60 @@ function searchCity (cityName) {
 
             var day2Hum = document.querySelector("#day-2-hum");
             day2Hum.textContent = "Humidity: " + data.daily[2].humidity;
-
-
-
-
 
 
             // DAY 3
-            var day2Date = document.querySelector("#day-2-date");
-            day2Date.textContent = dayjs(data.daily[2].dt*1000).format('MM/DD/YY');
+            var day3Date = document.querySelector("#day-3-date");
+            day3Date.textContent = dayjs(data.daily[3].dt*1000).format('MM/DD/YY');
 
-            var day2Icon = document.querySelector("#day-2-icon");
-            day2Icon.src = "https://openweathermap.org/img/wn/" + data.daily[2].weather[0].icon + ".png"
+            var day3Icon = document.querySelector("#day-3-icon");
+            day3Icon.src = "https://openweathermap.org/img/wn/" + data.daily[3].weather[0].icon + ".png"
 
-            var day2Temp = document.querySelector("#day-1-temp");
-            var convertedTempDay2 = Math.round(((data.daily[2].temp.day - 273.15) * 9/5 + 32), 2);
-            day2Temp.textContent = "Temp: " + convertedTempDay2  + " °F";
+            var day3Temp = document.querySelector("#day-3-temp");
+            var convertedTempDay3 = Math.round(((data.daily[3].temp.day - 273.15) * 9/5 + 32), 2);
+            day3Temp.textContent = "Temp: " + convertedTempDay3  + " °F";
 
-            var day2Wind = document.querySelector("#day-2-wind");
-            day2Wind.textContent = "Wind: " + data.daily[2].wind_speed;
+            var day3Wind = document.querySelector("#day-3-wind");
+            day3Wind.textContent = "Wind: " + data.daily[3].wind_speed;
 
-            var day2Hum = document.querySelector("#day-2-hum");
-            day2Hum.textContent = "Humidity: " + data.daily[2].humidity;
+            var day3Hum = document.querySelector("#day-3-hum");
+            day3Hum.textContent = "Humidity: " + data.daily[3].humidity;
 
 
             // DAY 4
-            var day2Date = document.querySelector("#day-2-date");
-            day2Date.textContent = dayjs(data.daily[2].dt*1000).format('MM/DD/YY');
+            var day4Date = document.querySelector("#day-4-date");
+            day4Date.textContent = dayjs(data.daily[4].dt*1000).format('MM/DD/YY');
 
-            var day2Icon = document.querySelector("#day-2-icon");
-            day2Icon.src = "https://openweathermap.org/img/wn/" + data.daily[2].weather[0].icon + ".png"
+            var day4Icon = document.querySelector("#day-4-icon");
+            day4Icon.src = "https://openweathermap.org/img/wn/" + data.daily[4].weather[0].icon + ".png"
 
-            var day2Temp = document.querySelector("#day-1-temp");
-            var convertedTempDay2 = Math.round(((data.daily[2].temp.day - 273.15) * 9/5 + 32), 2);
-            day2Temp.textContent = "Temp: " + convertedTempDay2  + " °F";
+            var day4Temp = document.querySelector("#day-4-temp");
+            var convertedTempDay4 = Math.round(((data.daily[4].temp.day - 273.15) * 9/5 + 32), 2);
+            day4Temp.textContent = "Temp: " + convertedTempDay4  + " °F";
 
-            var day2Wind = document.querySelector("#day-2-wind");
-            day2Wind.textContent = "Wind: " + data.daily[2].wind_speed;
+            var day4Wind = document.querySelector("#day-4-wind");
+            day4Wind.textContent = "Wind: " + data.daily[4].wind_speed;
 
-            var day2Hum = document.querySelector("#day-2-hum");
-            day2Hum.textContent = "Humidity: " + data.daily[2].humidity;
+            var day4Hum = document.querySelector("#day-4-hum");
+            day4Hum.textContent = "Humidity: " + data.daily[4].humidity;
 
 
             // DAY 5
-            var day2Date = document.querySelector("#day-2-date");
-            day2Date.textContent = dayjs(data.daily[2].dt*1000).format('MM/DD/YY');
+            var day5Date = document.querySelector("#day-5-date");
+            day5Date.textContent = dayjs(data.daily[5].dt*1000).format('MM/DD/YY');
 
-            var day2Icon = document.querySelector("#day-2-icon");
-            day2Icon.src = "https://openweathermap.org/img/wn/" + data.daily[2].weather[0].icon + ".png"
+            var day5Icon = document.querySelector("#day-5-icon");
+            day5Icon.src = "https://openweathermap.org/img/wn/" + data.daily[5].weather[0].icon + ".png"
 
-            var day2Temp = document.querySelector("#day-1-temp");
-            var convertedTempDay2 = Math.round(((data.daily[2].temp.day - 273.15) * 9/5 + 32), 2);
-            day2Temp.textContent = "Temp: " + convertedTempDay2  + " °F";
+            var day5Temp = document.querySelector("#day-5-temp");
+            var convertedTempDay5 = Math.round(((data.daily[5].temp.day - 273.15) * 9/5 + 32), 2);
+            day5Temp.textContent = "Temp: " + convertedTempDay5  + " °F";
 
-            var day2Wind = document.querySelector("#day-2-wind");
-            day2Wind.textContent = "Wind: " + data.daily[2].wind_speed;
+            var day5Wind = document.querySelector("#day-5-wind");
+            day5Wind.textContent = "Wind: " + data.daily[5].wind_speed;
 
-            var day2Hum = document.querySelector("#day-2-hum");
-            day2Hum.textContent = "Humidity: " + data.daily[2].humidity;
+            var day5Hum = document.querySelector("#day-5-hum");
+            day5Hum.textContent = "Humidity: " + data.daily[5].humidity;
 
         })
     })
