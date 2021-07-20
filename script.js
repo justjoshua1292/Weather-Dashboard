@@ -1,7 +1,9 @@
 var textInput= document.querySelector("#text-input")
 var searchButton = document.querySelector("#search-button")
+var clearSearchButton = document.querySelector("#clear-search-history")
 searchButton.addEventListener('click', () => {
     searchCity(textInput.value)
+    
 })
 
 var searchedCities = [];
