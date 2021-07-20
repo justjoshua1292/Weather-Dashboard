@@ -46,12 +46,17 @@ function searchCity (cityName) {
     fetch(first_endpoint)
     .then(function(res){return res.json()})
     .then(function(data){
-        var second_endpoint = "https://api.openweathermap.org/data/2.5/onecall?lat="+ data.coord.lat  + "&lon="+ data.coord.lon + "&appid=85000a1b352882fd04e9a2a12a4c34e3";
+        
+        
+    var second_endpoint = "https://api.openweathermap.org/data/2.5/onecall?lat="+ data.coord.lat  + "&lon="+ data.coord.lon + "&appid=85000a1b352882fd04e9a2a12a4c34e3";
 
-        fetch(second_endpoint)
-        .then(function(res){return res.json()})
-        .then(function(data){
+    fetch(second_endpoint)
+    .then(function(res){return res.json()})
+    .then(function(data){
             console.log(data)
+
+            var currentDayIcon = document.querySelector("#current-day-icon");
+            currentDayIcon.src = "https://openweathermap.org/img/wn/" + data.daily[0].weather[0].icon + ".png"
 
             var currentDate = dayjs().format('MM/DD/YYYY');
             
@@ -74,8 +79,29 @@ function searchCity (cityName) {
 
             var uvIndex = document.querySelector('#uv-details');
             uvIndex.textContent= "UV Index: " + data.current.uvi ;
+            
+            if(data.current.uvi < 13 && data.current.uvi >= 11) {
+                uvIndex.classList.add("purple");
+            }
 
-            // Start editing the 5 day forecast elemts!
+            if(data.current.uvi < 11 && data.current.uvi >= 9) {
+                    uvIndex.classList.add("red");
+            }   
+
+            if(data.current.uvi < 9 && data.current.uvi >= 7) {
+                    uvIndex.classList.add("orange");
+            }
+
+            if(data.current.uvi < 7 && data.current.uvi >= 6) {
+                    uvIndex.classList.add("yellow");
+            }
+
+            if(data.current.uvi < 5 && data.current.uvi >= 1) {
+                uvIndex.classList.add("green");
+            }
+         
+
+            // Start editing the 5 day forecast elements!
 
             // DAY 1
             var day1Date = document.querySelector("#day-1-date");
@@ -168,7 +194,7 @@ function searchCity (cityName) {
             day5Hum.textContent = "Humidity: " + data.daily[5].humidity;
 
 
-            
+        
 
         })
     })
