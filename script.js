@@ -80,25 +80,25 @@ function searchCity (cityName) {
             humidityDetails.textContent= "Humidity: " + data.current.humidity ;
 
             var uvIndex = document.querySelector('#uv-details');
-            uvIndex.textContent= "UV Index: " + data.current.uvi ;
+            uvIndex.textContent= "UV Index: " + data.current.uvi;
             
-            if(data.current.uvi < 13 && data.current.uvi >= 11) {
+            if(data.current.uvi < 11 && data.current.uvi >= 9) {
                 uvIndex.classList.add("purple");
             }
 
-            if(data.current.uvi < 11 && data.current.uvi >= 9) {
+            if(data.current.uvi < 9 && data.current.uvi >= 7) {
                     uvIndex.classList.add("red");
             }   
 
-            if(data.current.uvi < 9 && data.current.uvi >= 7) {
+            if(data.current.uvi < 7 && data.current.uvi >= 5) {
                     uvIndex.classList.add("orange");
             }
 
-            if(data.current.uvi < 7 && data.current.uvi >= 6) {
-                    uvIndex.classList.add("yellow");
+            if(data.current.uvi < 5 && data.current.uvi >= 3) {
+                uvIndex.classList.add("yellow");
             }
 
-            if(data.current.uvi < 5 && data.current.uvi >= 1) {
+            if(data.current.uvi < 3 && data.current.uvi >= 1) {
                 uvIndex.classList.add("green");
             }
          
