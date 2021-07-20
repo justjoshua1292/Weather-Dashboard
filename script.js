@@ -54,7 +54,7 @@ function searchCity (cityName) {
             console.log(data)
 
             var currentDate = dayjs().format('MM/DD/YYYY');
-
+            
             var cityDetails = document.querySelector('#city-details');
             cityDetails.textContent = cityName + " (" + currentDate + ")";
 
@@ -166,6 +166,9 @@ function searchCity (cityName) {
 
             var day5Hum = document.querySelector("#day-5-hum");
             day5Hum.textContent = "Humidity: " + data.daily[5].humidity;
+
+
+            
 
         })
     })
