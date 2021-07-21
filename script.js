@@ -1,12 +1,24 @@
 var textInput= document.querySelector("#text-input")
 var searchButton = document.querySelector("#search-button")
-var clearSearchButton = document.querySelector("#clear-search-history")
 searchButton.addEventListener('click', () => {
     searchCity(textInput.value)
-    
+
+
 })
 
-var searchedCities = [];
+var searchedCities = JSON.parse(localStorage.getItem("cities")) || [];
+searchedCities.forEach(cityName => {
+    var historyBtn = document.createElement('button');
+    historyBtn.classList.add('btn', 'btn-secondary', 'mb-2');
+    historyBtn.textContent = cityName;
+    // add an event listener to the historybtn
+    historyBtn.addEventListener('click', (event) => {
+        searchCity(event.target.textContent)
+    })
+    // attach this newly created button into the city search history
+    var cityHistory = document.querySelector('#city-history');
+    cityHistory.append(historyBtn);
+});
 
 function searchCity (cityName) {
     
@@ -18,6 +30,8 @@ function searchCity (cityName) {
     if(!alreadyExists) {
         // add the cityName to searchedCities array
         searchedCities.push(cityName)
+
+        localStorage.setItem("cities", JSON.stringify(searchedCities));
 
 
         // add cityName into the city search history
@@ -81,7 +95,7 @@ function searchCity (cityName) {
 
             var uvIndex = document.querySelector('#uv-details');
             uvIndex.textContent= "UV Index: " + data.current.uvi;
-            
+            uvIndex.className="";
             if(data.current.uvi < 11 && data.current.uvi >= 9) {
                 uvIndex.classList.add("purple");
             }
@@ -98,7 +112,7 @@ function searchCity (cityName) {
                 uvIndex.classList.add("yellow");
             }
 
-            if(data.current.uvi < 3 && data.current.uvi >= 1) {
+            if(data.current.uvi < 3) {
                 uvIndex.classList.add("green");
             }
          
@@ -193,10 +207,19 @@ function searchCity (cityName) {
             day5Wind.textContent = "Wind: " + data.daily[5].wind_speed;
 
             var day5Hum = document.querySelector("#day-5-hum");
-            day5Hum.textContent = "Humidity: " + data.daily[5].humidity;
+            day5Hum.textContent = "Humidity: " + data.daily[5].humidity
 
 
-        
+
+            function clearStorage() {
+                localStorage.clear();
+                var cityHistory = document.querySelector('#city-history');
+                cityHistory.innerHTML= "<h5> City Search History </h5>";
+                var clearSearchHistoryButton = document.querySelector("#clear-history")  
+                clearSearchHistoryButton.addEventListener('click', 'clearStorage') 
+                  }
+            
+            
 
         })
     })
