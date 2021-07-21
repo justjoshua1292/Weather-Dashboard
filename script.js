@@ -3,8 +3,26 @@ var searchButton = document.querySelector("#search-button")
 searchButton.addEventListener('click', () => {
     searchCity(textInput.value)
 
-
 })
+
+// function clearStorage() {
+//     localStorage.clear();
+//     var cityHistory = document.querySelector('#city-history');
+//     cityHistory.innerHTML= "<h5> City Search History </h5>";
+//     var clearSearchHistoryButton = document.querySelector("#clear-history")  
+//     clearSearchHistoryButton.addEventListener('click', 'clearStorage') 
+//       }
+
+
+
+// Just in case you wanted to clear the city history on the button - this code would do the trick!
+// $("#city-history").click(function(event) {
+//     event.preventDefault() localStorage.clear() ;
+// }
+
+
+
+
 
 var searchedCities = JSON.parse(localStorage.getItem("cities")) || [];
 searchedCities.forEach(cityName => {
@@ -208,16 +226,6 @@ function searchCity (cityName) {
 
             var day5Hum = document.querySelector("#day-5-hum");
             day5Hum.textContent = "Humidity: " + data.daily[5].humidity
-
-
-
-            function clearStorage() {
-                localStorage.clear();
-                var cityHistory = document.querySelector('#city-history');
-                cityHistory.innerHTML= "<h5> City Search History </h5>";
-                var clearSearchHistoryButton = document.querySelector("#clear-history")  
-                clearSearchHistoryButton.addEventListener('click', 'clearStorage') 
-                  }
             
             
 

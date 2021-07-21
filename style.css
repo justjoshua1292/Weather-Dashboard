@@ -1,3 +1,4 @@
+
 .purple {
     background-color: purple;
 }
@@ -17,5 +18,17 @@
 
 .green{
     background-color: green;
+
+    /* The Weather Channel has 5 different colors for the UV index on their television channel that changes according to favorable, moderate and severe conditions, so i used five colors as well */
+    /* Tutor gave me his API key to use since i registered and mine didn't come before i finished this assignment. */
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#weekly-forecast {
+background-color: whitesmoke;
+border: 1px solid whitesmoke;
 }
 
